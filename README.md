@@ -16,7 +16,7 @@ Magnetization according to the well-known model of a single domain ferromagnetic
 draw_representation(ψ)
 ```
 
-<img src="./single_sw_particle.png" alt="Stoner-Wohlfarth particle at psi=60 degrees" width="350"/>
+<img src="./image/single_sw_particle.png" alt="Stoner-Wohlfarth particle at psi=60 degrees" width="350"/>
 
 Distribution of directions can be generated using the `RandomSpherePoints` module and its functions. Let us create N unit-vectors distributed randomly on the unit sphere:
 ```julia
@@ -43,11 +43,11 @@ using Plots
 plot(h,sum(m,1)'/N, xlim=(-2.2, 2.2), ylim = (-1.1, 1.1), aspect_ratio=[1 2], legend=:none, xlabel="Field", ylabel = "Magnetization")
 ``` 
 
-<img src="./sw_particle_distribution.png" alt="A set of randomly oriented particles" width="350"/>
+<img src="./image/sw_particle_distribution.png" alt="A set of randomly oriented particles" width="350"/>
 
 Here is a pretty animation of a set of the Stoner-Wohlfarth particles with different anisotropy angle:
 
-<img src="./anim_sw_particles.gif" alt="Different SwParticles" width="350"/>
+<img src="./image/anim_sw_particles.gif" alt="Different SwParticles" width="350"/>
 
 ## Multigrain magnetic particles
 
