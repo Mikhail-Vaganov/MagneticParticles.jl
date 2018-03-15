@@ -1,11 +1,11 @@
 # Magnetic particles, their magnetization and movement
-* `StonerWohlfarthModel` module contains types representing different models of magnetic particles. A set of useful functions allows one to simulate distribution of particles, calculate their curves of magnetization.
+* `StonerWohlfarthModel` module contains a set of useful functions allowing one to simulate distribution of the Stoner-Wohlfarth particles, calculate their curves of magnetization.
 * `RandomSpherePoints` allows one to obtain random uniform distribution of directions (unit radius-vectors). This tool is useful during simulation ransom isotropic distribution of directed particles.
 
 
 ## Usings
 ```julia
-using StonerWohlfarthModel, 
+using StonerWohlfarthModel
 ```
 
 ## Stoner-Wohlfarth particles
@@ -23,7 +23,9 @@ using RandomSpherePoints
 N = 1000
 directions = get_points_spherical_random(N)
 ``` 
-`get_points_spherical_random` function creates vectors with spherical coordinates (r θ ϕ). In turn, the `get_points_cartesian_random` returns vectors with Cartesian coordinates (x y z).
+`get_points_spherical_random` function creates vectors with spherical coordinates (r θ ϕ). 
+
+In turn, the `get_points_cartesian_random` returns vectors with Cartesian coordinates (x y z).
 
 
 We then can calculate magnetization loop of randomly oriented Stoner-Wohlfarth particles:
@@ -32,7 +34,6 @@ psis = directions[:,2]
 hstep = 0.01
 hmax = 2.0
 h = [collect(0:hstep:hmax); collect(hmax:-hstep:-hmax); collect(-hmax:hstep:hmax)]
-#display(@btime m=calculate_particles(psis, h))
 m=calculate_particles(psis, h)
 ```
 Using `Plots.jl` we can draw the magnetization curve:
@@ -43,7 +44,7 @@ plot(h,sum(m,1)'/N, xlim=(-2.2, 2.2), ylim = (-1.1, 1.1), aspect_ratio=[1 2], le
 
 <img src="./sw_particle_distribution.png" alt="A set of randomly oriented particles" width="350"/>
 
-Let us present animation of a set of the Stoner-Wohlfarth particles with different anisotropy angle:
+Here is a pretty animation of a set of the Stoner-Wohlfarth particles with different anisotropy angle:
 
 <img src="./anim_sw_particles.gif" alt="Different SwParticles" width="350"/>
 
