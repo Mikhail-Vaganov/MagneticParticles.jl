@@ -1,4 +1,7 @@
 # Magnetic particles, their magnetization and movement
+
+[![Build status](https://ci.appveyor.com/api/projects/status/ek6vorbd0vmh6wqu?svg=true)](https://ci.appveyor.com/project/Mikhail-Vaganov/magneticparticles-jl)
+
 ## Simulations of the Stoner-Wohlfarth model in Julia language
 * `StonerWohlfarthModel` module contains a set of useful functions allowing one to simulate distribution of the Stoner-Wohlfarth particles, calculate their curves of magnetization.
 * `RandomSpherePoints` allows one to obtain random uniform distribution of directions (unit radius-vectors). This tool is useful during simulation ransom isotropic distribution of directed particles.
