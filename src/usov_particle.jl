@@ -1,9 +1,5 @@
-module Usov2016
 
-μ₀=4pi*1e-7
-
-using RandomSpherePoints, Optim, Plots
-
+global μ₀=4pi*1e-7
 
 mutable struct UsovParticle
     n::Int
@@ -134,7 +130,4 @@ function magnetize_particle(p::UsovParticle, h::Array{Float64, 1})
     end
     
     return m
-end
-
-export create_for_constant_concentration, apply_field!, draw_representation, magnetize_particle
 end

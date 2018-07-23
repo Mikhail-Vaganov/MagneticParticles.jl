@@ -1,5 +1,3 @@
-module RandomSpherePoints
-
 function get_points_spherical_random(n::Int)
     r = ones(n)
     θ = acos.(1-2rand(n))
@@ -41,7 +39,7 @@ function random_sphere_pack(r::AbstractFloat, R::AbstractFloat, n::Int)
         end
     end
     
-    points = zeros(n, 3)
+    points = zeros(3, n)
     count = 0
     
     while count < n
@@ -68,15 +66,8 @@ function random_sphere_pack(r::AbstractFloat, R::AbstractFloat, n::Int)
         end
         
         count += 1;
-        points[count,:] = [x[I] y[J] z[K]]
+        points[:, count] = [x[I] y[J] z[K]]
     end
     
     return points
-end
-
-export get_points_spherical_random
-export get_points_cartesian_random
-export get_points_spherical_evenly
-export random_sphere_pack
-
 end
