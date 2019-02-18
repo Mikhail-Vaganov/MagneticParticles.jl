@@ -56,5 +56,9 @@ Here is a pretty animation of a set of the Stoner-Wohlfarth particles with diffe
 
 `Usov2016` module contains representation of multigrain magnetic microparticles. Results of his simulations can be found in [1]. The `UsovParticle` type represents those microparticles.
 
+## Acknowledgement
+This project has been developed for demonstrational purposes and with support of RFBR project 18-32-00817.
+
+
 # References
 1. N.A. Usov and O.N. Serebryakova, Universal behavior of dense clusters of magnetic nanoparticles, AIP Advances, 6, 2016, p. 075315
